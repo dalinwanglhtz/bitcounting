@@ -5,20 +5,11 @@ package com.codewardev;
 public class BitCounting {
 
 	public static int countBits(int n) {
-		
-		int remainder;
-		long binaryVal=0;
 		int numOnes=0;
-		long j=1;
 		while(n != 0) {
-			remainder = n % 2;
-			binaryVal += remainder * j;
-			j *= 10;
+			if(n % 2==1) numOnes++;
 			n /= 2;
-			if(remainder==1) numOnes++;
 		}
-		
-		System.out.println("Binary: "+binaryVal);
 		
 		return numOnes;
 	}
